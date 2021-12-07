@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 21:10:29 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/02 16:17:09 by coder            ###   ########.fr       */
+/*   Updated: 2021/12/03 16:24:21 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # define MAX_FD 256
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 1
 # include <unistd.h>
 # include <stdlib.h>
 #include "so_long.h"

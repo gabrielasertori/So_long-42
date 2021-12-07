@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/02 16:18:00 by coder            ###   ########.fr       */
+/*   Updated: 2021/12/07 16:47:11 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,12 @@ typedef struct s_map {
 	int	lines;
 	int	players;
 	int	collectables;
-	int	exit;
+	int	out;
 } t_map;
 
 int	close_window(t_data *data);
 int	key_map(int key, t_data *data);
 int render_next_frame(t_data *data);
+int	count_map(t_map *map, char argv[]);
 
 #endif
