@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/02 16:16:40 by coder            ###   ########.fr       */
+/*   Updated: 2021/12/08 02:20:34 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,17 @@ int	close_window(t_data *data)
 	printf("Au revoir\n");
 	exit(0);
 	return (0);
+}
+
+void	print_error(int signal)
+{
+	if (signal == 0)
+		printf("Malloc fail\n");
+	if (signal == 1)
+		printf("FD returned -1\n");
+	if (signal == 3)
+		printf("Invalid map\n");
+	if (signal == 4)
+		printf("Not enough items\n");
+	exit(0);
 }

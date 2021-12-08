@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/07 15:32:23 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/08 01:41:06 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int	main(int argc, char *argv[])
 	}
 
 	lines = count_map(&map, argv[1]);
-	printf("lines = %d\n", lines);
+	printf("lines: %d\n", map.lines);
+	printf("col: %d\n", map.columns);
+
 
 	/*
 	data.mlx_ptr = mlx_init();
