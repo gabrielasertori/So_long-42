@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/08 02:20:34 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/08 18:28:52 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	print_error(int signal)
 		printf("Invalid map\n");
 	if (signal == 4)
 		printf("Not enough items\n");
+	if (signal == 5)
+		printf("Error\n");
 	exit(0);
 }

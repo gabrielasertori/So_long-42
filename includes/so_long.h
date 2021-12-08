@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/08 02:16:15 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/08 20:47:32 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define CLICK_X 17
 # define KEY_PRESS 2
 # define KEY_PRESS_MASK 1L<<0
+# define SIZE_IMG 32
 
 typedef struct s_data {
 	void	*mlx_ptr;
@@ -44,17 +45,25 @@ typedef struct s_data {
 } t_data;
 
 typedef struct s_map {
-	int	columns;
-	int	lines;
-	int	players;
-	int	collectables;
-	int	out;
+	char	**matrix;
+	int		columns;
+	int		lines;
+	int		players;
+	int		collectables;
+	int		out;
+	int		validate;
 } t_map;
+
+
 
 int		close_window(t_data *data);
 void	print_error(int signal);
 int		key_map(int key, t_data *data);
 int		render_next_frame(t_data *data);
 int		count_map(t_map *map, char argv[]);
+int		verify_first_and_last(t_map *map);
+void	verify_map(t_map *map);
+int		count_items(char c, t_map *map);
+char	**ft_split(char const *s, char c);
 
 #endif
