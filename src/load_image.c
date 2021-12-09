@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 21:08:03 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/09 21:27:09 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:53:48 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ static void	load_image_misc(t_global *global)
 	global->data->img_path = mlx_xpm_file_to_image(\
 		global->data->mlx_ptr, PATH, &(global->data->img_width), \
 		&(global->data->img_height));
-	global->data->img_wall = mlx_xpm_file_to_image(\
-		global->data->mlx_ptr, WALL, &(global->data->img_width), \
-		&(global->data->img_height));
 	global->data->img_colect = mlx_xpm_file_to_image(\
 		global->data->mlx_ptr, COLECT, &(global->data->img_width), \
+		&(global->data->img_height));
+	global->data->img_wall = mlx_xpm_file_to_image(\
+		global->data->mlx_ptr, WALL, &(global->data->img_width), \
 		&(global->data->img_height));
 }

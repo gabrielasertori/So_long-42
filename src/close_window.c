@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/09 21:07:49 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:57:43 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	close_window(t_global *global)
 {
-	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_front);
+	free_images(global);
 	mlx_clear_window(global->data->mlx_ptr, global->data->mlx_win);
 	mlx_destroy_window(global->data->mlx_ptr, global->data->mlx_win);
 	mlx_destroy_display(global->data->mlx_ptr);
@@ -56,4 +56,21 @@ void	free_matrix(t_global *global)
 		i++;
 	}
 	free(global->map->matrix);
+}
+
+void	free_images(t_global *global)
+{
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_front);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_back);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_left);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_right);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_front);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_back);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_left);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_right);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_path);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_wall);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_colect);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_exit_block);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_exit_open);
 }

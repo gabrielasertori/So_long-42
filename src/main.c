@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/09 21:13:45 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 22:26:19 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,11 @@ int	main(int argc, char *argv[])
 	count_map(&global, argv[1]);
 
 	global.data->mlx_ptr = mlx_init();
-	global.data->mlx_win = mlx_new_window(global.data->mlx_ptr, global.map->lines * SIZE_IMG, global.map->columns * SIZE_IMG, "Testinho");
+	global.data->mlx_win = mlx_new_window(global.data->mlx_ptr, global.map->columns * SIZE_IMG, global.map->lines * SIZE_IMG, "Testinho");
 	load_image(&global);
-	mlx_put_image_to_window(global.data->mlx_ptr, global.data->mlx_win, global.data->img_player_front, global.data->img_width, global.data->img_height);
-/*
-	mlx_loop_hook(data.mlx_win, render_next_frame, &data);
-*/
 	mlx_hook(global.data->mlx_win, KEY_PRESS, KEY_PRESS_MASK, key_map, &global);
 	mlx_hook(global.data->mlx_win, CLICK_X, 0, close_window, &global);
+	mlx_loop_hook(global.data->mlx_ptr, put_images, &global);
 	mlx_loop(global.data->mlx_ptr);
 	return (0);
 }

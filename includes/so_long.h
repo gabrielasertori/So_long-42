@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/09 21:26:38 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 22:25:26 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define CLICK_X 17
 # define KEY_PRESS 2
 # define KEY_PRESS_MASK 1L<<0
-# define SIZE_IMG 32
+# define SIZE_IMG 64
 # define PLAYER_FRONT "./assets/player_front.xpm"
 # define PLAYER_BACK "./assets/player_back.xpm"
 # define PLAYER_LEFT "./assets/player_left.xpm"
@@ -98,5 +98,7 @@ void	verify_map(t_global *global);
 int		count_items(char c, t_global *global);
 char	**ft_split(char const *s, char c);
 void	load_image(t_global *global);
+void	free_images(t_global *global);
+int	put_images(t_global *global);
 
 #endif
