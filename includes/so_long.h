@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/08 20:47:32 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:26:38 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,39 @@
 # define KEY_PRESS 2
 # define KEY_PRESS_MASK 1L<<0
 # define SIZE_IMG 32
+# define PLAYER_FRONT "./assets/player_front.xpm"
+# define PLAYER_BACK "./assets/player_back.xpm"
+# define PLAYER_LEFT "./assets/player_left.xpm"
+# define PLAYER_RIGHT "./assets/player_right.xpm"
+# define ENEMY_FRONT "./assets/enemy_front.xpm"
+# define ENEMY_BACK "./assets/enemy_back.xpm"
+# define ENEMY_LEFT "./assets/enemy_left.xpm"
+# define ENEMY_RIGHT "./assets/enemy_right.xpm"
+# define EXIT_OPEN "./assets/exit_open.xpm"
+# define EXIT_BLOCK "./assets/exit_block.xpm"
+# define PATH "./assets/path.xpm"
+# define WALL "./assets/wall.xpm"
+# define COLECT "./assets/colect.xpm"
+
 
 typedef struct s_data {
 	void	*mlx_ptr;
 	void	*mlx_win;
-	void	*img;
 	int		img_width;
 	int		img_height;
+	void	*img_colect;
+	void	*img_enemy_back;
+	void	*img_enemy_front;
+	void	*img_enemy_right;
+	void	*img_enemy_left;
+	void	*img_exit_block;
+	void	*img_exit_open;
+	void	*img_path;
+	void	*img_player_back;
+	void	*img_player_front;
+	void	*img_player_right;
+	void	*img_player_left;
+	void	*img_wall;
 } t_data;
 
 typedef struct s_map {
@@ -54,16 +80,23 @@ typedef struct s_map {
 	int		validate;
 } t_map;
 
+typedef struct s_global
+{
+	t_data	*data;
+	t_map	*map;
+} t_global;
 
 
-int		close_window(t_data *data);
-void	print_error(int signal);
-int		key_map(int key, t_data *data);
-int		render_next_frame(t_data *data);
-int		count_map(t_map *map, char argv[]);
-int		verify_first_and_last(t_map *map);
-void	verify_map(t_map *map);
-int		count_items(char c, t_map *map);
+int		close_window(t_global *global);
+void	free_matrix(t_global *global);
+void	print_error(int signal, t_global *global);
+int		key_map(int key, t_global *global);
+int		render_next_frame(t_global *global);
+int		count_map(t_global *global, char argv[]);
+int		verify_first_and_last(t_global *global);
+void	verify_map(t_global *global);
+int		count_items(char c, t_global *global);
 char	**ft_split(char const *s, char c);
+void	load_image(t_global *global);
 
 #endif

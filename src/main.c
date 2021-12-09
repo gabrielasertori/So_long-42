@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/08 19:52:56 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:13:45 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,30 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t	n);
 
 int	main(int argc, char *argv[])
 {
-	t_data	data;
-	t_map	map;
-	int	lines;
-	char	*relative_path;
+	t_global	global;
+	int			lines;
 
-	relative_path = "./assets/player_front.xpm";
+	global.map = malloc(sizeof(t_map) * 1);
+	global.data = malloc(sizeof(t_data) * 1);
+	global.map->collectables = 0;
+	global.map->players = 0;
+	global.map->out = 0;
 	if (argc != 2)
-		print_error(5);
+		print_error(5, &global);
 	if (!ft_strnstr(argv[1], ".ber", 15))
-		print_error(5);
-	count_map(&map, argv[1]);
+		print_error(5, &global);
+	count_map(&global, argv[1]);
 
-	// data.mlx_ptr = mlx_init();
-	// data.mlx_win = mlx_new_window(data.mlx_ptr, map.lines * SIZE_IMG, map.columns * SIZE_IMG, "Testinho");
-	// data.img = mlx_xpm_file_to_image(data.mlx_ptr, relative_path, &data.img_width, &data.img_height);
-	// mlx_put_image_to_window(data.mlx_ptr, data.mlx_win, data.img, data.img_width, data.img_height);
-
+	global.data->mlx_ptr = mlx_init();
+	global.data->mlx_win = mlx_new_window(global.data->mlx_ptr, global.map->lines * SIZE_IMG, global.map->columns * SIZE_IMG, "Testinho");
+	load_image(&global);
+	mlx_put_image_to_window(global.data->mlx_ptr, global.data->mlx_win, global.data->img_player_front, global.data->img_width, global.data->img_height);
 /*
 	mlx_loop_hook(data.mlx_win, render_next_frame, &data);
 */
-	// mlx_hook(data.mlx_win, KEY_PRESS, KEY_PRESS_MASK, key_map, &data);
-	// mlx_hook(data.mlx_win, CLICK_X, 0, close_window, &data);
-	// mlx_loop(data.mlx_ptr);
+	mlx_hook(global.data->mlx_win, KEY_PRESS, KEY_PRESS_MASK, key_map, &global);
+	mlx_hook(global.data->mlx_win, CLICK_X, 0, close_window, &global);
+	mlx_loop(global.data->mlx_ptr);
 	return (0);
 }
 

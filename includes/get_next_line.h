@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 21:10:29 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/08 20:55:59 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/08 21:11:46 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *string);
 char	*ft_strdup(char *src);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 
 #endif
