@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:52:51 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/10 16:27:50 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 20:19:19 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	count_size(char *argv, t_global *global);
 static int	count_items(char c, t_global *global);
-static void	mallocate_map(t_global *global, char *argv, int fd);
+static void	mallocate_map(t_global *global, int fd);
 static void	start(char *buffer, int fd, t_global *global);
 
 int	count_map(t_global *global, char argv[])
@@ -26,7 +26,7 @@ int	count_map(t_global *global, char argv[])
 		|| global->map->out < 1)
 		print_error(4, global);
 	fd = open(argv, O_RDONLY);
-	mallocate_map(global, argv, fd);
+	mallocate_map(global, fd);
 	if (global->map->lines == global->map->columns)
 		print_error(3, global);
 	close(fd);
@@ -81,7 +81,7 @@ static int	count_items(char c, t_global *global)
 	return (1);
 }
 
-static void	mallocate_map(t_global *global, char *argv, int fd)
+static void	mallocate_map(t_global *global, int fd)
 {
 	char	*read_buffer;
 	char	*string;

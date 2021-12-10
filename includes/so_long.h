@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 16:13:22 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 20:17:15 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "get_next_line.h"
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include "./libft/libft.h"
 
+# define BUFFER_SIZE 1
 # define ESC 65307
 # define QUIT 113
 # define A 97

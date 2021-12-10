@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 16:24:38 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 23:27:18 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(int argc, char *argv[])
 {
 	t_global	global;
-	int			lines;
 
 	global.map = malloc(sizeof(t_map) * 1);
 	global.data = malloc(sizeof(t_data) * 1);
