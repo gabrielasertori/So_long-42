@@ -6,16 +6,11 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 14:22:22 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:24:38 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-
-//gcc -Wall -Werror -Wextra -o so_long main.c -lmlx -lXext -lX11 && ./so_long
-
-char	*ft_strnstr(const char *s1, const char *s2, size_t	n);
 
 int	main(int argc, char *argv[])
 {
@@ -33,39 +28,14 @@ int	main(int argc, char *argv[])
 	if (!ft_strnstr(argv[1], ".ber", 15))
 		print_error(5, &global);
 	count_map(&global, argv[1]);
-
 	global.data->mlx_ptr = mlx_init();
-	global.data->mlx_win = mlx_new_window(global.data->mlx_ptr, global.map->columns * SIZE_IMG, global.map->lines * SIZE_IMG, "So_long");
+	global.data->mlx_win = mlx_new_window(global.data->mlx_ptr, \
+		global.map->columns * SIZE_IMG, \
+		global.map->lines * SIZE_IMG, "So_long");
 	load_image(&global);
 	mlx_hook(global.data->mlx_win, KEY_PRESS, KEY_PRESS_MASK, key_map, &global);
 	mlx_hook(global.data->mlx_win, CLICK_X, 0, close_window, &global);
 	mlx_loop_hook(global.data->mlx_ptr, put_images, &global);
 	mlx_loop(global.data->mlx_ptr);
 	return (0);
-}
-
-
-char	*ft_strnstr(const char *s1, const char *s2, size_t	n)
-{
-	size_t	i;
-	size_t	j;
-	size_t	s2_len;
-
-	i = 0;
-	s2_len = ft_strlen(s2);
-	if (!s2_len)
-		return ((char *)s1);
-	if (n != 0)
-	{
-		while (s1[i] && i <= n - s2_len)
-		{
-			j = 0;
-			while (s2[j] && s2[j] == s1[i + j])
-				j++;
-			if (j == s2_len)
-				return ((char *)&s1[i]);
-			i++;
-		}
-	}
-	return (NULL);
 }

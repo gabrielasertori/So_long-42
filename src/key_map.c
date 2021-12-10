@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:10 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 15:55:34 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:44:51 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,50 +48,34 @@ static void	move_player(t_global *global, int col, int line, int key)
 	y = global->data->pos_col;
 	printf("x: %d\ny: %d\n\n\n\n", x, y);
 	validate = moves_verify(global, col, line, key);
-	printf("x: %d\ny: %d\nvalidate: %d\n\n\n\n", x, y, validate);
 	if (validate == 1)
 	{
 		global->map->matrix[x][y] = '0';
 		global->map->matrix[line][col] = 'P';
 		global->data->pos_line = line;
 		global->data->pos_col = col;
+		put_images(global);
 	}
-	for(int i = 0; global->map->matrix[i]; i++)
-		printf("%s\n", global->map->matrix[i]);
-	put_images(global);
 }
 
 static int	moves_verify(t_global *global, int col, int line, int key)
 {
 	if (global->map->matrix[line][col] == '1')
-	{
-		printf("To no 1\n");
 		return (-1);
-	}
 	if (global->map->matrix[line][col] == 'C')
 		global->map->collectables--;
 	if (global->map->matrix[line][col] == 'E' && global->map->collectables == 0)
 	{
-		global->map->matrix[global->data->pos_line][global->data->pos_col] = '0';
+		global->map->matrix[global->data->pos_line] \
+		[global->data->pos_col] = '0';
 		global->data->end_game = 1;
 		return (-1);
 	}
 	else if (global->map->matrix[line][col] == 'E')
-	{
-		printf("To no E\n");
 		return (-1);
-	}
 	if (key != 'a' && key != 'w' && key != 's' && key != 'd' && key != ARROW_UP
-			&& key != ARROW_DOWN && key != ARROW_LEFT && key != ARROW_RIGHT)
-	{
-		printf("To no key\n");
+		&& key != ARROW_DOWN && key != ARROW_LEFT && key != ARROW_RIGHT)
 		return (-1);
-	}
 	else
 		return (1);
 }
-
-// Key == 'a' é posição atual menos um na coluna
-// Key == 'w' é posição atual menos um na linha
-// Key == 's' é posição atual mais um na linha
-// Key == 'd' é posição atual mais um na coluna

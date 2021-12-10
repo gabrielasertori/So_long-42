@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/09 21:57:43 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:23:54 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	free_matrix(t_global *global)
 	int	i;
 
 	i = 0;
-	while(i < global->map->lines)
+	while (i < global->map->lines)
 	{
 		free(global->map->matrix[i]);
 		i++;

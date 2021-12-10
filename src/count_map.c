@@ -6,13 +6,14 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:52:51 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/10 14:11:07 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:27:50 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 static int	count_size(char *argv, t_global *global);
+static int	count_items(char c, t_global *global);
 static void	mallocate_map(t_global *global, char *argv, int fd);
 static void	start(char *buffer, int fd, t_global *global);
 
@@ -21,7 +22,8 @@ int	count_map(t_global *global, char argv[])
 	int	fd;
 
 	count_size(argv, global);
-	if (global->map->collectables < 1 || global->map->players < 1 || global->map->out < 1)
+	if (global->map->collectables < 1 || global->map->players < 1
+		|| global->map->out < 1)
 		print_error(4, global);
 	fd = open(argv, O_RDONLY);
 	mallocate_map(global, argv, fd);
@@ -41,7 +43,7 @@ static int	count_size(char *argv, t_global *global)
 	global->map->columns = 0;
 	bytes_read = 1;
 	fd = open(argv, O_RDONLY);
-	read_buffer = malloc(sizeof(char*) * BUFFER_SIZE + 1);
+	read_buffer = malloc(sizeof(char *) * BUFFER_SIZE + 1);
 	start(read_buffer, fd, global);
 	while (bytes_read != 0)
 	{
@@ -57,6 +59,25 @@ static int	count_size(char *argv, t_global *global)
 	global->map->columns--;
 	free(read_buffer);
 	close(fd);
+	return (1);
+}
+
+static int	count_items(char c, t_global *global)
+{
+	if (c == 'P')
+	{
+		global->data->pos_col = global->map->columns - 1;
+		global->data->pos_line = global->map->lines - 1;
+		global->map->players++;
+	}
+	else if (c == 'C')
+		global->map->collectables++;
+	else if (c == 'E')
+		global->map->out++;
+	else if (c == '1' || c == '0' || c == '\n')
+		return (1);
+	else
+		print_error(3, global);
 	return (1);
 }
 

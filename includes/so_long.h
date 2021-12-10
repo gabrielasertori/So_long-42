@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 15:56:28 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:13:22 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@
 # define WALL "./assets/wall.xpm"
 # define COLECT "./assets/colect.xpm"
 
-
 typedef struct s_data {
 	void	*mlx_ptr;
 	void	*mlx_win;
@@ -89,7 +88,6 @@ typedef struct s_global
 	t_map	*map;
 } t_global;
 
-
 int		close_window(t_global *global);
 void	free_matrix(t_global *global);
 void	print_error(int signal, t_global *global);
@@ -98,8 +96,8 @@ int		render_next_frame(t_global *global);
 int		count_map(t_global *global, char argv[]);
 int		verify_first_and_last(t_global *global);
 void	verify_map(t_global *global);
-int		count_items(char c, t_global *global);
 char	**ft_split(char const *s, char c);
+char	*ft_strnstr(const char *s1, const char *s2, size_t	n);
 void	load_image(t_global *global);
 void	free_images(t_global *global);
 int		put_images(t_global *global);
