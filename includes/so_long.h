@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/09 22:25:26 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:56:28 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ typedef struct s_data {
 	void	*img_player_right;
 	void	*img_player_left;
 	void	*img_wall;
+	int		pos_col;
+	int		pos_line;
+	int		end_game;
 } t_data;
 
 typedef struct s_map {
@@ -99,6 +102,6 @@ int		count_items(char c, t_global *global);
 char	**ft_split(char const *s, char c);
 void	load_image(t_global *global);
 void	free_images(t_global *global);
-int	put_images(t_global *global);
+int		put_images(t_global *global);
 
 #endif
