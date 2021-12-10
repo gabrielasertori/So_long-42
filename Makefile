@@ -6,7 +6,7 @@
 #    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 15:56:43 by coder             #+#    #+#              #
-#    Updated: 2021/12/11 00:11:57 by gcosta-d         ###   ########.fr        #
+#    Updated: 2021/12/11 00:28:17 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,21 @@ CFLAGS = -Wall -Wextra -Werror
 FLAGS = -lmlx -lX11 -lXext
 OBJ = $(subst $(SRC_PATH),$(OBJ_PATH),$(SRC:%.c=%.o))
 
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	mkdir -p objs
+	gcc $(CFLAGS) -c $< -o $@
+
 all: $(NAME)
 
-$(NAME):
-	gcc $(CFLAGS) -o $(NAME) ./src/main.c $(OBJ) $(FLAGS)
+$(NAME): $(OBJ)
+	$(MAKE) -C $(LIBFT_PATH)
+	gcc $(CFLAGS) -o $(NAME) ./src/main.c $(OBJ) $(LIBFT_LIB) $(FLAGS)
 
-$(LIBFT_LIB): $(LIBFT_LIB) $(OBJ)
-	$(MAKE) -C ./includes/libft
+clean:
+	$(MAKE) -C $(LIBFT_PATH) clean
+	rm -f $(OBJ)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	gcc $(CFLAGS) -c $< -o $@
+fclean: clean
+	$(MAKE) -C $(LIBFT_PATH) fclean
+	rmdir $(OBJ_PATH)
+	rm -f $(NAME)
