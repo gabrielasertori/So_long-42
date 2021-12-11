@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 14:18:52 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:47:09 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -56,10 +56,7 @@ typedef struct s_data {
 	int		img_width;
 	int		img_height;
 	void	*img_colect;
-	void	*img_enemy_back;
 	void	*img_enemy_front;
-	void	*img_enemy_right;
-	void	*img_enemy_left;
 	void	*img_exit_block;
 	void	*img_exit_open;
 	void	*img_path;
@@ -71,6 +68,7 @@ typedef struct s_data {
 	int		pos_col;
 	int		pos_line;
 	int		end_game;
+	int		side;
 } t_data;
 
 typedef struct s_map {
@@ -102,5 +100,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t	n);
 void	load_image(t_global *global);
 void	free_images(t_global *global);
 int		put_images(t_global *global);
+void	put_collectables(t_global *global, int line, int col);
+void	put_exit(t_global *global, int line, int col);
+void	put_enemy(t_global *global, int line, int col);
 
 #endif

@@ -6,12 +6,12 @@
 #    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/08 11:37:22 by gcosta-d          #+#    #+#              #
-#    Updated: 2021/11/11 12:24:25 by gcosta-d         ###   ########.fr        #
+#    Updated: 2021/12/11 18:09:54 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = clang
+CC = gcc
 FLAGS = -Wall -Wextra -Werror
 SOURCE = ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c \
 			ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \

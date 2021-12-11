@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 15:01:51 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:08:24 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 int	main(int argc, char *argv[])
 {
@@ -23,6 +23,7 @@ int	main(int argc, char *argv[])
 	global.map->out = 0;
 	global.data->end_game = 0;
 	global.map->moves = 0;
+	global.data->side = S;
 	if (argc != 2)
 		print_error(5, &global);
 	if (!ft_strnstr(argv[1], ".ber", 50))

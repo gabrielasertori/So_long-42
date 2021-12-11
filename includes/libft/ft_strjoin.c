@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:03:06 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/09/14 10:17:45 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/11 14:48:02 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * to the new string.
  */
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -42,5 +42,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	s3[i + j] = 0;
+	free(s1);
 	return (s3);
 }
