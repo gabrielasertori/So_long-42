@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:10 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 14:42:28 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:56:24 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ int	key_map(int key, t_global *global)
 	else if (key == 'd' || key == ARROW_RIGHT)
 		col++;
 	if (global->data->end_game == 0)
-	{
 		move_player(global, col, line, key);
-		printf("moves: %d\n", global->map->moves);
-	}
 	return (0);
 }
 
@@ -57,6 +54,7 @@ static void	move_player(t_global *global, int col, int line, int key)
 		global->data->pos_line = line;
 		global->data->pos_col = col;
 		put_images(global);
+		printf("moves: %d\n", global->map->moves);
 	}
 }
 
