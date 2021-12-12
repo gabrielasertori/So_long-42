@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:50:26 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 17:47:09 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:50:12 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,12 @@
 # define ARROW_RIGHT 65363
 # define CLICK_X 17
 # define KEY_PRESS 2
-# define KEY_PRESS_MASK 1L<<0
 # define SIZE_IMG 64
 # define PLAYER_FRONT "./assets/player_front.xpm"
 # define PLAYER_BACK "./assets/player_back.xpm"
 # define PLAYER_LEFT "./assets/player_left.xpm"
 # define PLAYER_RIGHT "./assets/player_right.xpm"
 # define ENEMY_FRONT "./assets/enemy_front.xpm"
-# define ENEMY_BACK "./assets/enemy_back.xpm"
-# define ENEMY_LEFT "./assets/enemy_left.xpm"
-# define ENEMY_RIGHT "./assets/enemy_right.xpm"
 # define EXIT_OPEN "./assets/exit_open.xpm"
 # define EXIT_BLOCK "./assets/exit_block.xpm"
 # define PATH "./assets/path.xpm"
@@ -69,7 +65,7 @@ typedef struct s_data {
 	int		pos_line;
 	int		end_game;
 	int		side;
-} t_data;
+}	t_data;
 
 typedef struct s_map {
 	char	**matrix;
@@ -79,13 +75,13 @@ typedef struct s_map {
 	int		collectables;
 	int		out;
 	int		moves;
-} t_map;
+}	t_map;
 
 typedef struct s_global
 {
 	t_data	*data;
 	t_map	*map;
-} t_global;
+}	t_global;
 
 int		close_window(t_global *global);
 void	free_matrix(t_global *global);

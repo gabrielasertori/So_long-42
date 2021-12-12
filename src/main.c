@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 15:01:51 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:39:43 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 		global.map->columns * SIZE_IMG, \
 		global.map->lines * SIZE_IMG, "So_long");
 	load_image(&global);
-	mlx_hook(global.data->mlx_win, KEY_PRESS, KEY_PRESS_MASK, key_map, &global);
+	mlx_hook(global.data->mlx_win, KEY_PRESS, 1L << 0, key_map, &global);
 	mlx_hook(global.data->mlx_win, CLICK_X, 0, close_window, &global);
 	mlx_loop_hook(global.data->mlx_ptr, put_images, &global);
 	mlx_loop(global.data->mlx_ptr);

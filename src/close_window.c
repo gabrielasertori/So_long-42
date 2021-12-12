@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 15:11:15 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:43:47 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,6 @@ void	free_images(t_global *global)
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_back);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_left);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_right);
-	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_front);
-	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_back);
-	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_left);
-	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_right);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_path);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_wall);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_colect);
