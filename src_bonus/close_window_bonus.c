@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 15:54:14 by coder             #+#    #+#             */
-/*   Updated: 2021/12/11 17:07:47 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/12/13 00:03:49 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/12/13 01:01:58 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_error(int signal, t_global *global)
 		printf("Error\nNot enough items\n");
 	if (signal == 5)
 		printf("Error\nNot a ber file\n");
-	if (global->map->matrix)
+	if (global->map->matrix != 0)
 		free_matrix(global);
 	if (global->map)
 		free(global->map);

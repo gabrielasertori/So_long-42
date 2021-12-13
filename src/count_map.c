@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:52:51 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/11 14:51:38 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/12/13 01:00:00 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ static void	mallocate_map(t_global *global, int fd)
 		string = ft_strjoin(string, read_buffer);
 	}
 	global->map->matrix = ft_split(string, '\n');
-	verify_map(global);
 	free(string);
 	free(read_buffer);
+	verify_map(global);
 }
 
 static void	start(char *buffer, int fd, t_global *global)

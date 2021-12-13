@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 15:56:47 by coder             #+#    #+#             */
-/*   Updated: 2021/12/12 23:39:43 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/12/13 00:03:24 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/12/13 00:55:41 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char *argv[])
 	global.map->out = 0;
 	global.data->end_game = 0;
 	global.map->moves = 0;
+	global.map->matrix = 0;
 	if (argc != 2)
 		print_error(5, &global);
 	if (!ft_strnstr(argv[1], ".ber", 50))
