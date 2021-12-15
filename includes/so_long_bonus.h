@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 00:05:05 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/13 00:05:06 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/12/02 15:50:26 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/12/13 00:01:52 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -39,6 +39,7 @@
 # define PLAYER_BACK "./assets/player_back.xpm"
 # define PLAYER_LEFT "./assets/player_left.xpm"
 # define PLAYER_RIGHT "./assets/player_right.xpm"
+# define ENEMY_FRONT "./assets/enemy_front.xpm"
 # define EXIT_OPEN "./assets/exit_open.xpm"
 # define EXIT_BLOCK "./assets/exit_block.xpm"
 # define PATH "./assets/path.xpm"
@@ -51,6 +52,7 @@ typedef struct s_data {
 	int		img_width;
 	int		img_height;
 	void	*img_colect;
+	void	*img_enemy_front;
 	void	*img_exit_block;
 	void	*img_exit_open;
 	void	*img_path;
@@ -62,6 +64,7 @@ typedef struct s_data {
 	int		pos_col;
 	int		pos_line;
 	int		end_game;
+	int		side;
 }	t_data;
 
 typedef struct s_map {
@@ -93,5 +96,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t	n);
 void	load_image(t_global *global);
 void	free_images(t_global *global);
 int		put_images(t_global *global);
+void	put_collectables(t_global *global, int line, int col);
+void	put_exit(t_global *global, int line, int col);
+void	put_enemy(t_global *global, int line, int col);
 
 #endif

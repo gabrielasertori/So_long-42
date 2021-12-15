@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   close_window_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 00:02:50 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/13 00:53:08 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/12/13 00:03:49 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/12/13 01:01:58 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 int	close_window(t_global *global)
 {
@@ -40,7 +40,7 @@ void	print_error(int signal, t_global *global)
 		printf("Error\nNot enough items\n");
 	if (signal == 5)
 		printf("Error\nNot a ber file\n");
-	if (global->map->matrix)
+	if (global->map->matrix != 0)
 		free_matrix(global);
 	if (global->map)
 		free(global->map);
@@ -68,6 +68,7 @@ void	free_images(t_global *global)
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_back);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_left);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_player_right);
+	mlx_destroy_image(global->data->mlx_ptr, global->data->img_enemy_front);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_path);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_wall);
 	mlx_destroy_image(global->data->mlx_ptr, global->data->img_colect);

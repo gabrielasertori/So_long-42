@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 00:03:24 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/12/13 00:55:41 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/12/13 00:04:07 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/12/13 02:17:57 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
+
+static void	init_game(t_global *global);
 
 int	main(int argc, char *argv[])
 {
 	t_global	global;
 
-	global.map = malloc(sizeof(t_map) * 1);
-	global.data = malloc(sizeof(t_data) * 1);
-	global.map->collectables = 0;
-	global.map->players = 0;
-	global.map->out = 0;
-	global.data->end_game = 0;
-	global.map->moves = 0;
-	global.map->matrix = 0;
+	init_game(&global);
 	if (argc != 2)
 		print_error(5, &global);
 	if (!ft_strnstr(argv[1], ".ber", 50))
@@ -39,4 +34,17 @@ int	main(int argc, char *argv[])
 	mlx_loop_hook(global.data->mlx_ptr, put_images, &global);
 	mlx_loop(global.data->mlx_ptr);
 	return (0);
+}
+
+static void	init_game(t_global *global)
+{
+	global->map = malloc(sizeof(t_map) * 1);
+	global->data = malloc(sizeof(t_data) * 1);
+	global->map->collectables = 0;
+	global->map->players = 0;
+	global->map->out = 0;
+	global->data->end_game = 0;
+	global->map->moves = 0;
+	global->data->side = S;
+	global->map->matrix = 0;
 }
