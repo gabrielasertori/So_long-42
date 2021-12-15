@@ -6,11 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:52:51 by gcosta-d          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2021/12/13 03:30:43 by gcosta-d         ###   ########.fr       */
-=======
-/*   Updated: 2021/12/13 01:00:00 by gcosta-d         ###   ########.fr       */
->>>>>>> 172b16ad2b0c1d4d4490f9aeaf44d84e78c08205
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +89,8 @@ static void	mallocate_map(t_global *global, int fd)
 
 	bytes_read = 1;
 	string = ft_strdup("");
-<<<<<<< HEAD
 	read_buffer = malloc(sizeof(char *) * BUFFER_SIZE + 1);
 	*(read_buffer + 1) = '\0';
-=======
-	read_buffer = ft_calloc(sizeof(char *), BUFFER_SIZE + 1);
->>>>>>> 172b16ad2b0c1d4d4490f9aeaf44d84e78c08205
 	start(read_buffer, fd, global);
 	while (bytes_read != 0)
 	{
