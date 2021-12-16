@@ -13,8 +13,6 @@
 		<a href="https://www.linkedin.com/in/gabriela-sertori-50b390189/">
 			<img alt="Gabriela linkedin" src="https://img.shields.io/badge/-gabisertori-blue?style=flat&logo=Linkedin&logoColor=white" />
 		</a>
-	</div>
-	<div>
 		<a href="https://github.com/gabrielasertori">
 			<img alt="Gabriela Sertori" src="https://img.shields.io/badge/-gabisertori-blue?style=flat&logo=github&logoColor=white" />
 		</a>
@@ -26,18 +24,22 @@
 This is the fifth project of école 42 projects.<br>
 This project is a very small 2D game. It is built to make you work with textures, sprites. And some very basic gameplay elements.
 
+<div>
+	<img src="./img/So_long_min.gif" alt="so_long gif"/>
+</div>
+
 ## 🗒️ About
 
 The game is simple, you are santa and needs to collect all the presents to finally go down in the fireplace. But be careful, because Rudolph doesn't want to work this Christmas, so don't touch him!
 
-## Run
+## ⚙️ Run
 
 This program use the **minilibx** library. A very specific library developed for 42 projects.<br>
 
 ### Installing minilibx
 
 The official repository:
-[https://github.com/42Paris/minilibx-linux]https://github.com/42Paris/minilibx-linux
+[https://github.com/42Paris/minilibx-linux](https://github.com/42Paris/minilibx-linux)
 
 Follow the installing process steps to install the library on your machine. Otherwise the project won't run.
 
@@ -61,7 +63,7 @@ After, you'll need to execute the binary with the path to the map
 Maps are in the maps directory.<br>
 Bonus maps works weird with no bonus binary, but bonus binary works fine with any kind of map.<br>
 
-## Make your own game!
+## 🕹️ Make your own game!
 
 You can build any map following the rules:
 - The file must be a .ber file
@@ -73,7 +75,7 @@ You can build any map following the rules:
 - `Y` represents the enemies positions (only with bonus)
 - It must contains at least: 1 player, 1 collectables and 1 exit
 
-## Contact
+## 📫 Contact
 
 If you want to contribute with the project, please, feel free to open an issue [here](https://github.com/gabrielasertori/So_long-42/issues) followed by a pull request [here](https://github.com/gabrielasertori/So_long-42/pulls).<br>
 Found any bug? Open an issue [here](https://github.com/gabrielasertori/So_long-42/issues) with the title [BUG].
