@@ -86,14 +86,15 @@ Write in it like the exemple below:
 <div>
 	<img src="./img/map_exemple.gif" alt="map editing exemple gif"/>
 </div>
-
+<br>
 Now, execute the binary with the path to your new map:
+<br>
 ```shell
 ./so_long_bonus maps/exemple.ber
 ```
-
+<br>
 <div>
-	<img src="./img/executing.gif" alt="command to open new game gif"/>
+	<img src="./img/map_exemple_exec.gif" alt="command to open new game gif"/>
 </div>
 
 ## 📫 Contact
