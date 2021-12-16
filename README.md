@@ -89,6 +89,7 @@ Write in it like the exemple below:
 <br>
 Now, execute the binary with the path to your new map:
 <br>
+
 ```shell
 ./so_long_bonus maps/exemple.ber
 ```
