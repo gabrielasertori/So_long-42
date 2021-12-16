@@ -30,15 +30,15 @@ This project is a very small 2D game. It is built to make you work with textures
 
 ## 🗒️ About
 
-The game is simple, you are santa and needs to collect all the presents to finally go down in the fireplace. But be careful, because Rudolph doesn't want to work this Christmas, so don't touch him!
+The game is simple, you are santa and you need to collect all the presents to, finally, go down in the fireplace. But be careful, Rudolph doesn't want to work this Christmas, so don't touch him!
 
 ## ⚙️ Run
 
-This program use the **minilibx** library. A very specific library developed for 42 projects.<br>
+This program use the **minilibx** library. A very specific and simple X-Window programming API in C, designed for students, suitable for X-beginners, developed for 42 graphic projects.<br>
 
 ### Installing minilibx
 
-The official repository:
+Official repository:
 [https://github.com/42Paris/minilibx-linux](https://github.com/42Paris/minilibx-linux)
 
 Follow the installing process steps to install the library on your machine. Otherwise the project won't run.
@@ -46,18 +46,20 @@ Follow the installing process steps to install the library on your machine. Othe
 ### Running the program
 
 First clone the repository into your machine
-```
+```shell
 https://github.com/gabrielasertori/So_long-42.git
 ```
 
 Then, build the program with make or make bonus<br>
-Obs.: standart project doesn't has enemies, only the bonus part. If you want to run the program with enemies, please, pass bonus as argument to make.
-```
+Obs.: ff you want to run the program with enemies and animations, please, pass bonus as argument to make.
+```shell
+make
+# or
 make bonus
 ```
 
 After, you'll need to execute the binary with the path to the map
-```
+```shell
 ./so_long_bonus maps/map3_bonus.ber
 ```
 Maps are in the maps directory.<br>
@@ -67,7 +69,7 @@ Bonus maps works weird with no bonus binary, but bonus binary works fine with an
 
 You can build any map following the rules:
 - The file must be a .ber file
-- `1` represents walls and the map must be sowrounded by them
+- `1` represents walls and the map must be surrounded by them
 - `0` represents valid paths
 - `P` represents the player starting position
 - `C` represents the collectables
