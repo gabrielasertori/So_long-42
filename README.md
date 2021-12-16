@@ -65,7 +65,7 @@ After, you'll need to execute the binary with the path to the map
 Maps are in the maps directory.<br>
 Bonus maps works weird with no bonus binary, but bonus binary works fine with any kind of map.<br>
 
-## 🕹️ Make your own game!
+## 🕹️ Make your own map to play the game!
 
 You can build any map following the rules:
 - The file must be a .ber file
@@ -76,6 +76,25 @@ You can build any map following the rules:
 - `E` represents the exit
 - `Y` represents the enemies positions (only with bonus)
 - It must contains at least: 1 player, 1 collectables and 1 exit
+- The map must be rectangular
+
+### Map exemple
+
+Open your choosen IDE and create a file with .ber at the end.<br>
+Write in it like the exemple below:
+
+<div>
+	<img src="./img/map_exemple.gif" alt="map editing exemple gif"/>
+</div>
+
+Now, execute the binary with the path to your new map:
+```shell
+./so_long_bonus maps/exemple.ber
+```
+
+<div>
+	<img src="./img/executing.gif" alt="command to open new game gif"/>
+</div>
 
 ## 📫 Contact
 
